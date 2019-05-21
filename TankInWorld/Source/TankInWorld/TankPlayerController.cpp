@@ -9,3 +9,15 @@ ATank* ATankPlayerController::GetControlledTan() const {
 		
 		// we can call get pawn because the ATankPlayerController class is a child of player controller
 }
+
+void ATankPlayerController::BeginPlay() {
+	Super::BeginPlay();
+	UE_LOG(LogTemp, Warning, TEXT("PlayerControllerBeginPlay"));
+	ATank* controlledTank = GetControlledTan();
+	if (controlledTank) {
+		UE_LOG(LogTemp, Warning, TEXT("Current possessing pawn is %S"),*(controlledTank->GetName()));
+	}
+	else {
+		UE_LOG(LogTemp, Warning, TEXT("No possesed tank"));
+	}
+}
