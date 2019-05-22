@@ -26,6 +26,8 @@ void ATankPlayerController::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 	//UE_LOG(LogTemp, Warning, TEXT("Event Tick"));
+	FVector HitLocation;
+	//DeprojectScreenPositionToWorld(float ScreenX, float ScreenY, FVector& WorldLocation, FVector& WorldDirection)
 }
 
 void ATankPlayerController::AimTowardCrosshead()
@@ -33,4 +35,14 @@ void ATankPlayerController::AimTowardCrosshead()
 	if (!GetControlledTan) {
 		return;
 	}
+	FVector HitLocation;
+	if (GetSightRayHitLocation(HitLocation)) {
+		//Do a line trace
+		UE_LOG(LogTemp, Warning, TEXT("The cursor hit location is %s"), *(HitLocation->ToString()));
+	}
+}
+
+bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitPosotion)
+{
+	return false;
 }
