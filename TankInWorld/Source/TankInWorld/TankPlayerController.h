@@ -18,5 +18,8 @@ class TANKINWORLD_API ATankPlayerController : public APlayerController
 public:
 	ATank* GetControlledTan() const;
 	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaSeconds) override;
+private:
+	void AimTowardCrosshead();
 	
 };

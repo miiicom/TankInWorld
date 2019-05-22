@@ -21,3 +21,16 @@ void ATankPlayerController::BeginPlay() {
 		UE_LOG(LogTemp, Warning, TEXT("No possesed tank"));
 	}
 }
+
+void ATankPlayerController::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+	//UE_LOG(LogTemp, Warning, TEXT("Event Tick"));
+}
+
+void ATankPlayerController::AimTowardCrosshead()
+{
+	if (!GetControlledTan) {
+		return;
+	}
+}
