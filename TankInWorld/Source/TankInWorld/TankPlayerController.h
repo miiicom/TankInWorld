@@ -22,5 +22,9 @@ public:
 private:
 	void AimTowardCrosshead();
 	bool GetSightRayHitLocation(FVector& OutHitPosotion);
+	bool GetLookVectorHitLocation(FVector& LookDirection, FVector & HitLocation);
+	UPROPERTY(EditAnyWhere)float CorsshairXLocation = 0.5;
+	UPROPERTY(EditAnyWhere)float CorsshairYLocation = 0.33;
+	float LineTraceRange = 100000;
 	
 };
