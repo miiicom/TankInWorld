@@ -18,6 +18,7 @@ class TANKINWORLD_API ATankAIController : public AAIController
 public:
 	
 	void BeginPlay() override;
+	void Tick(float DeltaSeconds) override;
 private:
 	ATank* GetControlledTank() const;
 	ATank* GetPlayerTank() const;
