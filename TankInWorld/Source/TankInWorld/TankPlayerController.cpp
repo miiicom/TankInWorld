@@ -47,7 +47,7 @@ void ATankPlayerController::AimTowardCrosshead()
 	else {
 		HitLocation = FVector(0.f, 0.f, 0.f);
 	}
-	UE_LOG(LogTemp, Warning, TEXT("The crosshair world space location is %s"), *(HitLocation.ToString()));
+	//UE_LOG(LogTemp, Warning, TEXT("The crosshair world space location is %s"), *(HitLocation.ToString()));
 }
 
 bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitPosotion)
