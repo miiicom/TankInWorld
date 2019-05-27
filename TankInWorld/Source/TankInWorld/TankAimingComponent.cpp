@@ -17,7 +17,8 @@ UTankAimingComponent::UTankAimingComponent()
 void UTankAimingComponent::AimAt(FVector & AimLocation)
 {
 	auto Tankname = GetOwner()->GetName();
-	UE_LOG(LogTemp, Warning, TEXT("%s is aiming at %s"), *Tankname, *(AimLocation.ToString()));
+	FVector BarrelLocation = Barrel->GetComponentLocation();
+	UE_LOG(LogTemp, Warning, TEXT("%s is aiming at %s, its barrel location is %s"), *Tankname, *(AimLocation.ToString()),*(BarrelLocation.ToString()));
 }
 
 // Called when the game starts
