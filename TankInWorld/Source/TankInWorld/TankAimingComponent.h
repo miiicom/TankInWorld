@@ -15,7 +15,7 @@ class TANKINWORLD_API UTankAimingComponent : public UActorComponent
 public:	
 	// Sets default values for this component's properties
 	UTankAimingComponent();
-	void AimAt(FVector &AimLocation);
+	void AimAt(FVector &AimLocation, float LaunchSpeed);
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	void SetBarrelPointer(UStaticMeshComponent* BarrelToSet);
 
