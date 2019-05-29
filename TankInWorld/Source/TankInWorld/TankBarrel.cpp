@@ -3,7 +3,8 @@
 
 #include "TankBarrel.h"
 
-void UTankBarrel::Elevate(float Degree)
+void UTankBarrel::Elevate(float RelativeDegree)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Barrel is  %s"), *(this->GetName()));
+	auto time = GetWorld()->GetTimeSeconds();
+	UE_LOG(LogTemp, Warning, TEXT("time is %f and Barrel is  %s"),time, *(this->GetName()));
 }

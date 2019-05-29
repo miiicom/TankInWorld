@@ -16,7 +16,7 @@ class TANKINWORLD_API UTankBarrel : public UStaticMeshComponent
 	
 
 public:
-	void Elevate(float Degree);
+	void Elevate(float RelativeDegree);
 	UPROPERTY(EditAnywhere,Category = setup)
 		float MaxDegreePersecond = 20.0f;
 	UPROPERTY(EditAnywhere, Category = setup)
