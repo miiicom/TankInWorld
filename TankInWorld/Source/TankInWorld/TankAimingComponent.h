@@ -5,8 +5,9 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "TankAimingComponent.generated.h"
-
-
+//Forward Decleration
+class UTankBarrel;
+//Hold parameters for barrels and contrl the elevation and rotation
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class TANKINWORLD_API UTankAimingComponent : public UActorComponent
 {
@@ -17,7 +18,7 @@ public:
 	UTankAimingComponent();
 	void AimAt(FVector &AimLocation, float LaunchSpeed);
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-	void SetBarrelPointer(UStaticMeshComponent* BarrelToSet);
+	void SetBarrelPointer(UTankBarrel* BarrelToSet);
 
 protected:
 	// Called when the game starts
@@ -25,7 +26,7 @@ protected:
 
 private:	
 	// Called every frame
-	UStaticMeshComponent*Barrel = nullptr;
+	UTankBarrel*Barrel = nullptr;
 	void MoveBarrel(FVector AimDirection);
 
 		

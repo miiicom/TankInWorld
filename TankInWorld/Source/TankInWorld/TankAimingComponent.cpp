@@ -2,6 +2,7 @@
 
 
 #include "TankAimingComponent.h"
+#include "TankBarrel.h"
 #include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
 
 // Sets default values for this component's properties
@@ -37,7 +38,7 @@ void UTankAimingComponent::AimAt(FVector & AimLocation, float LaunchSpeed)
 		))
 	{
 		FVector NormalizedLaunchVelocity = LaunchVelocity.GetSafeNormal();
-		UE_LOG(LogTemp, Warning, TEXT("%s is aiming at %s, its barrel location is %s, it is shooting at direction %s"), *Tankname, *(AimLocation.ToString()), *(BarrelLocation.ToString()), *NormalizedLaunchVelocity.ToString());
+		//UE_LOG(LogTemp, Warning, TEXT("%s is aiming at %s, its barrel location is %s, it is shooting at direction %s"), *Tankname, *(AimLocation.ToString()), *(BarrelLocation.ToString()), *NormalizedLaunchVelocity.ToString());
 		MoveBarrel(NormalizedLaunchVelocity);
 	}
 
@@ -55,6 +56,12 @@ void UTankAimingComponent::BeginPlay()
 
 void UTankAimingComponent::MoveBarrel(FVector AimDirection)
 {
+	auto BarrelRotation = Barrel->GetForwardVector().Rotation();
+	auto AimRotator = AimDirection.Rotation();
+	auto DeltaRotation = AimRotator - BarrelRotation;
+
+	Barrel->Elevate(5.f);
+
 }
 
 
@@ -66,7 +73,7 @@ void UTankAimingComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 	// ...
 }
 
-void UTankAimingComponent::SetBarrelPointer(UStaticMeshComponent * BarrelToSet)
+void UTankAimingComponent::SetBarrelPointer(UTankBarrel * BarrelToSet)
 {
 	Barrel = BarrelToSet;
 	UE_LOG(LogTemp, Warning, TEXT("Tank aiming component holds barrel,its name is  %s"), *(Barrel->GetName()));
