@@ -38,6 +38,7 @@ void UTankAimingComponent::AimAt(FVector & AimLocation, float LaunchSpeed)
 	{
 		FVector NormalizedLaunchVelocity = LaunchVelocity.GetSafeNormal();
 		UE_LOG(LogTemp, Warning, TEXT("%s is aiming at %s, its barrel location is %s, it is shooting at direction %s"), *Tankname, *(AimLocation.ToString()), *(BarrelLocation.ToString()), *NormalizedLaunchVelocity.ToString());
+		MoveBarrel(NormalizedLaunchVelocity);
 	}
 
 	
@@ -50,6 +51,10 @@ void UTankAimingComponent::BeginPlay()
 
 	// ...
 	
+}
+
+void UTankAimingComponent::MoveBarrel(FVector AimDirection)
+{
 }
 
 

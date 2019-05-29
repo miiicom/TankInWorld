@@ -26,6 +26,7 @@ protected:
 private:	
 	// Called every frame
 	UStaticMeshComponent*Barrel = nullptr;
+	void MoveBarrel(FVector AimDirection);
 
 		
 };
