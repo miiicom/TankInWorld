@@ -6,9 +6,6 @@
 #include "Components/StaticMeshComponent.h"
 #include "TankBarrel.generated.h"
 
-/**
- * 
- */
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class TANKINWORLD_API UTankBarrel : public UStaticMeshComponent
 {
