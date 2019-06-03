@@ -73,7 +73,7 @@ void UTankAimingComponent::MoveTurret(FVector AimDirection)
 	auto AimRotator = AimDirection.Rotation();
 	auto DeltaRotation = AimRotator - BarrelRotation;
 
-	Turret->Rotate(DeltaRotation.Yaw);
+	Turret->Rotate(DeltaRotation.GetNormalized().Yaw);
 }
 
 // Called every frame

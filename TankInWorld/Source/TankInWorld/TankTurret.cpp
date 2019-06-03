@@ -12,5 +12,5 @@ void UTankTurret::Rotate(float RelativeDegree)
 	//float ElevationChange = RelativeDegree * MaxDegreePersecond * time;
 	float clampedElevationChange = RelativeRotation.Yaw + RotationnChange;
 
-	this->SetRelativeRotation(FRotator(0.0f,FMath::Clamp<float>(clampedElevationChange, MinRotationDegree, MaxRotationDegree), 0.0f));
+	this->SetRelativeRotation(FRotator(0.0f,clampedElevationChange, 0.0f));
 }
