@@ -87,7 +87,7 @@ void UTankAimingComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 void UTankAimingComponent::SetBarrelPointer(UTankBarrel * BarrelToSet)
 {
 	Barrel = BarrelToSet;
-	UE_LOG(LogTemp, Warning, TEXT("Tank aiming component holds barrel,its name is  %s"), *(Barrel->GetName()));
+	//UE_LOG(LogTemp, Warning, TEXT("Tank aiming component holds barrel,its name is  %s"), *(Barrel->GetName()));
 
 }
 

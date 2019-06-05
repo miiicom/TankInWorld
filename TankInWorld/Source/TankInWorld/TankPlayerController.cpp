@@ -40,7 +40,7 @@ void ATankPlayerController::AimTowardCrosshead()
 	FVector HitLocation;
 	if (GetSightRayHitLocation(HitLocation)) {
 		//Do a line trace
-		UE_LOG(LogTemp, Warning, TEXT("The cursor hit location is %s"), *(HitLocation.ToString()));
+		//UE_LOG(LogTemp, Warning, TEXT("The cursor hit location is %s"), *(HitLocation.ToString()));
 		GetControlledTan()->AimAt(HitLocation);
 		
 	}

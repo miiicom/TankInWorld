@@ -21,7 +21,7 @@ ATank* ATankAIController::GetControlledTank() const{
 ATank * ATankAIController::GetPlayerTank() const
 {
 	auto PlayerTank = GetWorld()->GetFirstPlayerController()->GetPawn();
-	UE_LOG(LogTemp, Warning, TEXT("%s location is  %s"), *(PlayerTank->GetName()),*(PlayerTank->GetActorLocation().ToString()));
+	//UE_LOG(LogTemp, Warning, TEXT("%s location is  %s"), *(PlayerTank->GetName()),*(PlayerTank->GetActorLocation().ToString()));
 	if (!PlayerTank) { 
 		return nullptr; 
 	}
