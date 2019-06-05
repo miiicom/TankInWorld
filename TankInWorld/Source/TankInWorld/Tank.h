@@ -9,6 +9,7 @@
 class UTankBarrel; //Forward Decleration
 class UTankTurret;
 class UTankAimingComponent;
+class ATankProjectile;
 UCLASS()
 class TANKINWORLD_API ATank : public APawn
 {
@@ -38,4 +39,6 @@ public:
 
 private:
 	UPROPERTY(EditAnywhere, Category = Firing) float LaunchSpeed = 100000.0;
+	UPROPERTY(EditAnywhere, Category = Setup) TSubclassOf<ATankProjectile> ProjectileBP; // Alternative: TSubclassOf<UDamageType> from https://docs.unrealengine.com/en-US/Programming/UnrealArchitecture/TSubclassOf/index.html
+	UTankBarrel* Barrel = nullptr;
 };
