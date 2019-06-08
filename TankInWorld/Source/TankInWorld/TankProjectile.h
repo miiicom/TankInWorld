@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "TankProjectile.generated.h"
 
+class UProjectileMovementComponent;
 UCLASS()
 class TANKINWORLD_API ATankProjectile : public AActor
 {
@@ -14,6 +15,9 @@ class TANKINWORLD_API ATankProjectile : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ATankProjectile();
+	void LaunchProjectile(float speed);
+
+	
 
 protected:
 	// Called when the game starts or when spawned
@@ -22,5 +26,8 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+private:
+	UProjectileMovementComponent* projectileMoveComponent = nullptr;
 
 };

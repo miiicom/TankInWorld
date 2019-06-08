@@ -38,7 +38,9 @@ public:
 	void Fire();
 
 private:
-	UPROPERTY(EditAnywhere, Category = Firing) float LaunchSpeed = 100000.0;
+	UPROPERTY(EditAnywhere, Category = Firing) float LaunchSpeed = 4000.0;
 	UPROPERTY(EditAnywhere, Category = Setup) TSubclassOf<ATankProjectile> ProjectileBP; // Alternative: TSubclassOf<UDamageType> from https://docs.unrealengine.com/en-US/Programming/UnrealArchitecture/TSubclassOf/index.html
 	UTankBarrel* Barrel = nullptr;
+	float ReloadTimeInSeconds = 3.0f;
+	double LastFireSecond = 0.0;
 };
